@@ -1,0 +1,11 @@
+{
+  "name": "webcomponents",
+  "version": "1.0.0",
+  "description": "Test met webcomponenten",
+  "author": "Jan Jaap Siewers",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
+
