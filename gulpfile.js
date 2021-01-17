@@ -1,5 +1,6 @@
 const {src, dest, series, parallel, watch} = require('gulp');
 const del = require('del');
+const concat = require('gulp-concat');
 const browserSync = require('browser-sync').create();
 
 const origin = 'src';
@@ -11,7 +12,7 @@ function html(cb) {
 }
 
 function css(cb) {
-    src(`${origin}/css/**/*.css`).pipe(dest(`${destination}/css`));
+    src(`${origin}/css/**/*.css`).pipe(concat('style.css')).pipe(dest(`${destination}/css`));
     cb();
 }
 

@@ -1,0 +1,13 @@
+/* Navbar */
+nav-bar {
+    /* overflow: hidden; */
+    background-color: var(--c8);
+    font-size: 4rem;
+    color:purple;
+}
+
+a {
+    color:#fff;
+    text-decoration:none;
+}
+

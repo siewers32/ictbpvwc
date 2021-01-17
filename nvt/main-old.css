@@ -1,0 +1,376 @@
+/* Fonts and colors */
+
+:root {
+    font-size: 16px;
+
+    --body-font-family: 'Public_Sans', 'Arial', sans-serif;
+    --code-font-family: 'JetBrainsMono', sans-serif;
+    --public-sans-wght: 200;
+    --type-scale: 0.8;
+    --media-phone: 800px;
+    --media-tablet: 1090px;
+    --media-desktop: 3840px;
+
+    /* colors 
+    c1 = orange
+    c2 = beige
+    c3 = blue
+    c4 = grey
+    c5 = black
+    */
+    --c1: #FF8000;
+    --c2: #B06E2C;
+    --c3: #005E7A;
+    --c4: #052c44;
+    --c5: #1f1f1f;
+    --c6: #d4c4b3;
+    --c7: #f7f4f1;
+    --c8: #cccbca;
+
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    font-weight: 400;
+    font-family: var(--body-font-family);
+    font-weight: var(--public-sans-wght);
+    margin: 0px;
+    padding: 0px;
+    background-color: #fff;
+    color: var(--c5);
+    line-height: calc(var(--type-scale) * 1.5);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    color: var(--c4);
+    line-height: calc(var(--type-scale) * 1.4);
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
+}
+
+h1 {
+    font-size: calc(1em * var(--type-scale) * 4);
+}
+
+h2 {
+    font-size: calc(1em * var(--type-scale) * 3);
+}
+
+h3 {
+    font-size: calc(1em * var(--type-scale) * 2);
+}
+
+.code {
+    font-family: 'JetBrainsMono';
+    font-size: 1em;
+}
+
+/* Page content */
+.content {
+    max-width: 1090px;
+    width: 80%;
+    margin: auto;
+}
+
+/* grid */
+
+p.col-1 {
+    grid-area: col-1;
+    /* background-color: sandybrown; */
+}
+
+p.col-2 {
+    grid-area: col-2;
+    /* background-color: sandybrown; */
+}
+
+article.header {
+    grid-area: header;
+    /* background-color: rgb(165, 96, 244); */
+}
+
+
+footer {
+    grid-area: footer;
+    /* background-color: seagreen; */
+}
+
+main {
+    display: grid;
+    grid-template-areas:
+        'header header header header header header'
+        'col-1 col-1 col-1 col-2 col-2 col-2'
+    ;
+
+    grid-gap: 1.5rem;
+    padding: 1rem;
+}
+
+div#cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 1rem;
+}
+
+.card {
+    background-color: var(--c7);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 1px 1px 5px var(--c8);
+    padding: 1rem;
+    padding-top: 0px;
+}
+
+.card a,
+.card a:visited {
+    /* more */
+    margin-top: 1rem;
+    float: right;
+    color: var(--c3);
+}
+
+/* A2HS */
+
+#addToHomeScreen {
+    display: none;
+    width: 400px;
+    margin: auto;
+    padding: 1rem;
+    padding-top: 0px;
+    background-color: var(--c7);
+    border: var(--c6) 2px solid;
+    border-radius: 16px;
+}
+
+#addToHomeScreen img {
+    display: block;
+    margin: auto;
+    background-color: var(--c4);
+    padding: 0.5rem;
+    border-radius: 16px;
+}
+
+#addToHomeScreen a {
+    color: rgb(255, 255, 255);
+    background-color: var(--c3);
+    padding: 0.7rem;
+    margin: 1rem;
+    margin-bottom: 0px;
+    line-height: 3rem;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+#addToHomeScreen div {
+    text-align: center;
+}
+
+/* Navbar */
+#navbar {
+    /* overflow: hidden; */
+    background-color: var(--c3);
+}
+
+.menu-item {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 1rem;
+}
+
+#navbar-brand {
+    float: left;
+    height: 40px;
+    width: 123px;
+    background-image: url('/img/layout/edutorial-orange-white.svg');
+    background-repeat: no-repeat;
+    margin-top: 1rem;
+}
+
+.navbar-menu,
+#navbar-hamburger,
+#navbar-close {
+    position: absolute;
+    top: 1rem;
+    right: 12%;
+    display: block;
+}
+
+#navbar-close,
+#navbar-hamburger {
+    display: none;
+    z-index: 1000;
+}
+
+#menu-opener,
+#menu-closer {
+    float: right;
+    color: white;
+}
+
+.navbar-menu-sm {
+    position: absolute;
+    top: 3rem;
+    left: 10%;
+    z-index: 999;
+    width: 80%;
+    background-color: var(--c3);
+}
+
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky+.content {
+    padding-top: 4rem;
+}
+
+/* learningpath page -- courses */
+
+#courses .wrap {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#courses article {
+    padding: 1rem;
+}
+
+
+
+#courses .course,
+#jumbo {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 1px 1px 5px var(--c8);
+}
+
+#jumbo {
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 1px 1px 5px var(--c8);
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+
+#courses .icon {
+    background-repeat: no-repeat;
+    background-size: 95%;
+}
+
+/* TEST */
+
+.learnpath {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+
+}
+
+.path {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: column;
+
+}
+
+.coursewrapper {
+    padding-top: 2rem;
+}
+
+.line {
+    flex-grow: 4;
+    width: 3px;
+    background-color: var(--c3);
+    margin: auto;
+}
+
+.grow-2 {
+    flex-grow:2;
+}
+
+.grow-3 {
+    flex-grow:3;
+}
+
+.circle {
+    height: 15px;
+    width: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 3px solid var(--c3);
+    margin: auto;
+}
+
+@media only screen and (max-width: 1090px) {
+
+    /* Grid */
+    main {
+        display: grid;
+        grid-template-areas:
+            'header header'
+            'col-1 col-2'
+        ;
+    }
+
+
+    /* Navbar */
+
+}
+
+@media only screen and (max-width: 770px) {
+
+    /* Grid */
+    main {
+        display: grid;
+        grid-template-areas:
+            'header'
+            'col-1'
+            'col-2'
+        ;
+
+    }
+
+    @media only screen and (max-width: 600px) {
+
+        /* Grid */
+        main {
+            display: grid;
+            grid-template-areas:
+                'header'
+                'col-1'
+                'col-2'
+            ;
+            padding: 1rem;
+        }
+
+        /* Navigation */
+        #navbar-hamburger {
+            display: block;
+        }
+
+        .navbar-menu {
+            display: none;
+        }
+
+        #navbar-menu>.menu-item {
+            border-bottom: white 1px solid;
+            padding: 1rem;
+        }
+    }
