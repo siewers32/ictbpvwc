@@ -73,21 +73,15 @@ h3 {
 }
 
 /* Page content */
-.content {
-    max-width: 1090px;
-    width: 80%;
-    margin: auto;
+header {
+    display:grid;
 }
 
 nav {
     display:flex;
 }
 
-header {
-    display:grid;
-}
-
-main {
+/* main {
     display: grid;
     grid-template-areas:
         'header header'
@@ -96,9 +90,15 @@ main {
 
     grid-gap: 1.5rem;
     padding: 1rem;
-}
+} */
 
-footer {
+/* footer {
     grid-area: footer;
-    /* background-color: seagreen; */
+} */
+
+.content {
+    max-width:1090px;
+    width:80%;
+    margin:auto;
+    background-color:rebeccapurple;
 }

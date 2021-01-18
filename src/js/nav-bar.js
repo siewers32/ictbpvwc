@@ -10,7 +10,7 @@ class NavBar extends HTMLElement {
         });
         //const style = document.createElement('style');
         //let div = document.createElement('div');
-        //div.innerHTML = "<p>Hallo in navbar</p>";
+        this.innerHTML = "<p>Hallo in navbar</p>";
         //shadowRoot.appendChild(style);
         //shadowRoot.appendChild(div);
         console.log("in constructor");
@@ -45,17 +45,12 @@ class NavBar extends HTMLElement {
     connectedCallback() {
         console.log("connectecallback aangeroepen");
         //this.updateStyle(this);
-        //const myP = document.createElement('p');
+        const myP = document.createElement('nav-bar-link');
         //myP.style.color = "#ccc";
-        //myP.innerHTML = "Hallo allemaal";
+        myP.innerHTML = "<p>Hallo allemaal</p>";
         ///const linkElem = document.createElement('link');
         //inkElem.setAttribute('rel', 'stylesheet');
         //linkElem.setAttribute('href', 'css/nav-bar.css');
-        //this.shadowRoot.appendChild(myP);
+        this.shadowRoot.appendChild(myP);
     }
 }
-customElements.define('nav-bar', NavBar);
-customElements.whenDefined('nav-bar').then(() => {
-    console.log('nav-bar defined');
-});
-

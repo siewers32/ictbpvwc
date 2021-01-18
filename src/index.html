@@ -3,23 +3,111 @@
 <head>
     <meta charset="utf-8">
     <title>Simple template</title>
+    <script src="/js/x-foo.js" defer></script>
     <script src="/js/nav-bar.js" defer></script>
     <script src="/js/nav-bar-link.js" defer></script>
+    <script src="/js/nav-bar-test.js" defer></script>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+            nav-bar-test>li {
+                display: inline-block;
+                margin-right: 2rem;
+            }
+    </style>
 </head>
 <html>
 
 <body>
-    <header>
+    <!-- templates -->
+    <template id="nav-bar-test">
+
+        <style>
+            :host {
+                --c5: #27ff14;
+            }
+
+            nav {
+                display: flex;
+                justify-content: space-between;
+                background-color: var(--c5);
+            }
+
+            #items {
+                color: red;
+                margin-right: 4rem;
+            }
+
+            .boe {
+                color: green;
+            }
+
+            ul {
+                color: red;
+                list-style: none;
+            }
+
+            div.spacer {
+                color: green;
+                margin-right: 2rem;
+            }
+
+
+            #brand {
+                color: blue;
+            }
+        </style>
+
         <nav>
-            <nav-brand />
-            <nav-bar>
-            </nav-bar>
-            <nav-bar-link></nav-bar-link>
-            <nav-bar-link></nav-bar-link>
+            <div id="brand">
+                <slot name="brand">Zomaar wat</slot>
+            </div>
+            <div>
+                <ul>
+                    <slot name="menu-item"></slot>
+                </ul>
+            </div>
+        </nav>
+
+    </template>
+
+    <template id="nav-bar-new">
+        <style>
+            nav {
+                display: flex;
+            }
+        </style>
+        <div id="navbar-brand">
+            <a id="brand" href="javascript:void(0)">
+                <div></div>
+            </a>
+        </div>
+        <div id="navbar-menu" class="navbar-menu">
+            <a class="menu-item active" href="javascript:void(0)">Home</a>
+            <a class="menu-item" href="javascript:void(0)">News</a>
+            <a class="menu-item" href="javascript:void(0)">Contact</a>
+        </div>
+        <div id="navbar-hamburger">
+            <i id="menu-opener" class="fas fa-bars fa-1x"></i>
+        </div>
+    </template>
+    <!-- end templates -->
+
+    <header>
+        <nav-bar-test>
+            <span slot="brand">jatsekidee</span>
+            <li slot="menu-item">blaberdie</li>
+            <li slot="menu-item">blaberdie2</li>
+            <li slot="menu-item">blaberdie3</li>
+        </nav-bar-test>
+        <nav>
+            <nav-brand></nav-brand>
+            <nav-item slot="link">item1</nav-item>
+            <nav-item slot="link">item1</nav-item>
+            <nav-item slot="link">item1</nav-item>
+            <nav-item slot="link">item1</nav-item>
         </nav>
     </header>
-    <main>
-    </main>
+
 </body>
+
 </html>

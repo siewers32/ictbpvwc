@@ -1,4 +1,4 @@
-class NavBarLink extends HTMLElement {
+class NavBrand extends HTMLElement {
 
     // Can define constructor arguments if you wish.
     constructor() {
@@ -10,7 +10,7 @@ class NavBarLink extends HTMLElement {
         });
         //const style = document.createElement('style');
         let div = document.createElement('div');
-        div.innerHTML = "Hallo in linkje";
+        div.innerHTML = "Hallo in brand";
         //shadowRoot.appendChild(style);
         shadowRoot.appendChild(div);
         console.log("in constructor");
@@ -25,32 +25,15 @@ class NavBarLink extends HTMLElement {
         console.log('je hebt een link geklikt');
     }
 
-    // updateStyle(elem) {
-    //     console.log("style update!")
-    //     const shadow = elem.shadowRoot;
-    //     shadow.querySelector('style').textContent = `
-    //     div {
-    //         width:100px;
-    //         height:100px;
-    //         border: 1px solid black;
-    //     }`
-    //     console.log(elem.div);
-    // }
-
     attributeChangedCallback() {
         console.log("attribute changed");
     }
-
-    
+  
     connectedCallback() {
         console.log("connectecallback aangeroepen");
     }
 }
-customElements.define('nav-bar-link', NavBarLink);
-customElements.whenDefined('nav-bar-link').then(() => {
-    console.log("nav-bar-link defined")
-    customElements.define('nav-bar', NavBar);
-})
+customElements.define('nav-brand', NavBrand);
 
 
 
