@@ -36,10 +36,8 @@ body {
     font-weight: var(--public-sans-wght);
     margin: 0px;
     padding: 0px;
-    background-color: #fff;
     color: var(--c5);
-    line-height: calc(var(--type-scale) * 1.5);
-    background-color:rosybrown;
+    line-height: calc(var(--type-scale) * 1.8);
 }
 
 h1,
@@ -56,15 +54,15 @@ h6 {
 }
 
 h1 {
-    font-size: calc(1em * var(--type-scale) * 4);
-}
-
-h2 {
     font-size: calc(1em * var(--type-scale) * 3);
 }
 
+h2 {
+    font-size: calc(1em * var(--type-scale) * 2.2);
+}
+
 h3 {
-    font-size: calc(1em * var(--type-scale) * 2);
+    font-size: calc(1em * var(--type-scale) * 1.8);
 }
 
 .code {
@@ -73,32 +71,80 @@ h3 {
 }
 
 /* Page content */
+
 header {
-    display:grid;
+    display:flex;
+    justify-content: space-between;
+    background-color:var(--c4);
+}
+
+main, nav {
+    width: 80%;
+    margin: auto;
+    max-width: 1090px;
+}
+
+main {
+    margin-top:4rem;
 }
 
 nav {
-    display:flex;
+    display: flex;
+    justify-content: space-between;
 }
 
-/* main {
+div#brand {
+    align-self:flex-start;
+    width:400px;
+    height: 100px;
+    background-image: url("/img/Logo_ROCvF.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: -30px;
+}
+
+div#menu {
+    margin-top:35px;
+}
+
+nav-link {
+    align-self: flex-end;
+    padding-top:40px;
+}
+
+
+nav-link a {
+    color:#fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    margin-left:2rem;
+}
+
+article {
     display: grid;
-    grid-template-areas:
-        'header header'
-        'col-1 col-2'
-    ;
+    grid-template-columns:repeat( auto-fit, minmax(250px, 1fr) );
+    gap: 2rem;
+    margin: auto;
+    /*border: black 1px solid;*/
+    margin-bottom: 1rem;
+}
 
-    grid-gap: 1.5rem;
+section {
+    display: grid;
+    grid-template-columns:repeat( auto-fit, minmax(250px, 1fr) );
+    gap: 1rem;
+}
+
+card-element {
+    border-radius: 16px;
     padding: 1rem;
-} */
+    box-shadow: 3px 3px 5px 1px #cccbca;
+}
 
-/* footer {
+card-element > p {
+    color: #1f1f1f;
+}
+
+footer {
     grid-area: footer;
-} */
-
-.content {
-    max-width:1090px;
-    width:80%;
-    margin:auto;
-    background-color:rebeccapurple;
 }

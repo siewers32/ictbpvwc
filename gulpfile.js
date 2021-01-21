@@ -2,12 +2,19 @@ const {src, dest, series, parallel, watch} = require('gulp');
 const del = require('del');
 const concat = require('gulp-concat');
 const browserSync = require('browser-sync').create();
+const imagemin = require("gulp-imagemin");
 
 const origin = 'src';
 const destination = 'build';
 
 function html(cb) {
     src(`${origin}/**/*.html`).pipe(dest(destination));
+    cb();
+}
+
+function fonts(cb) {
+    src(`${origin}/fonts/**/*.css`).pipe(dest(`${destination}/fonts`));
+    src(`${origin}/fonts/**/*.ttf`).pipe(dest(`${destination}/fonts`));
     cb();
 }
 
@@ -18,6 +25,11 @@ function css(cb) {
 
 function js(cb) {
     src(`${origin}/js/**/*.js`).pipe(dest(`${destination}/js`));
+    cb();
+}
+
+function img(cb) {
+    src(`${origin}/img/**/*.{jpg,jpeg,png,svg}`).pipe(imagemin()).pipe(dest(`${destination}/img`));
     cb();
 }
 
@@ -45,4 +57,4 @@ function server(cb) {
 }
 
 
-exports.default = series(clean, parallel(html, css, js), server, watcher);
+exports.default = series(clean, parallel(fonts, html, css, js, img), server, watcher);

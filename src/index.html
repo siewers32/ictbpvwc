@@ -3,111 +3,92 @@
 <head>
     <meta charset="utf-8">
     <title>Simple template</title>
-    <script src="/js/x-foo.js" defer></script>
-    <script src="/js/nav-bar.js" defer></script>
-    <script src="/js/nav-bar-link.js" defer></script>
-    <script src="/js/nav-bar-test.js" defer></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/ios/apple-launch-180.png">
+    <link rel="mask-icon" href="/img/ios/editorial.svg" color="#005E7A">
+    <link rel="icon" type="image/png" sizes="16x16" href="/android/icon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/android/icon-32.png">
+    <meta name="msapplication-TileColor" content="#005E7A">
+    <meta name="theme-color" content="#FF8000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <!-- <script src="/js/x-foo.js" defer></script>
+    <script src="/js/nav-bar.js" defer></script> -->
+    <!-- <script src="/js/nav-bar-link.js" defer></script>-->
+    <link href="/fonts/JetBrains_Mono/jetbrains_mono.css" rel="stylesheet" media="all">
+    <link href="/fonts/Public_Sans/public_sans.css" rel="stylesheet" media="all">
+    <script src="https://kit.fontawesome.com/b11e76739c.js" crossorigin="anonymous"></script>
+    <!-- <script src="/main.js" defer></script> -->
+    <!--<script src="/js/navbar.js?bla5" defer></script>-->
+    <!--<script src="js/links.js" defer></script>-->
+    <script src="js/nav-link.js" defer></script>
+    <script src="js/card-element.js" defer></script>
     <link rel="stylesheet" href="css/style.css">
-    <style>
-            nav-bar-test>li {
-                display: inline-block;
-                margin-right: 2rem;
-            }
-    </style>
 </head>
 <html>
 
 <body>
-    <!-- templates -->
-    <template id="nav-bar-test">
-
-        <style>
-            :host {
-                --c5: #27ff14;
-            }
-
-            nav {
-                display: flex;
-                justify-content: space-between;
-                background-color: var(--c5);
-            }
-
-            #items {
-                color: red;
-                margin-right: 4rem;
-            }
-
-            .boe {
-                color: green;
-            }
-
-            ul {
-                color: red;
-                list-style: none;
-            }
-
-            div.spacer {
-                color: green;
-                margin-right: 2rem;
-            }
-
-
-            #brand {
-                color: blue;
-            }
-        </style>
-
-        <nav>
-            <div id="brand">
-                <slot name="brand">Zomaar wat</slot>
-            </div>
-            <div>
-                <ul>
-                    <slot name="menu-item"></slot>
-                </ul>
-            </div>
-        </nav>
-
-    </template>
-
-    <template id="nav-bar-new">
-        <style>
-            nav {
-                display: flex;
-            }
-        </style>
-        <div id="navbar-brand">
-            <a id="brand" href="javascript:void(0)">
-                <div></div>
-            </a>
+<header>
+    <nav>
+        <div id="brand"></div>
+        <div id="menu">
+            <nav-link><a href="/test/tesst2" slot="title">Home</a></nav-link>
+            <nav-link><a href="/test/tess76" slot="title">Contact</a></nav-link>
         </div>
-        <div id="navbar-menu" class="navbar-menu">
-            <a class="menu-item active" href="javascript:void(0)">Home</a>
-            <a class="menu-item" href="javascript:void(0)">News</a>
-            <a class="menu-item" href="javascript:void(0)">Contact</a>
+    </nav>
+</header>
+<main>
+    <h1>BPV ICT opleidingen</h1>
+    <article>
+        <div class="col">
+            <h3>Doelstellingen van de BPV</h3>
+            <p>De BPV is een belangrijk onderdeel van je opleiding. Studenten die klaar zijn met de BPV geven vaak aan
+                dat je in de BPV veel kunt leren. Door 'echt' te werken in de beroepspraktijk geef je niet alleen je
+                vakkennis een boost, maar leer vooral samen te werken en doelen te halen in een beroepscultuur.</p>
+            <p>Samengevat:</p>
+            <ul>
+                <li>Je ontwikkelt je vakdeskundigheid</li>
+                <li>Je ontwikkelt sociale vaardigheden op de werkvloer</li>
+                <li>Je oriënteert je op het uitoefenen van je toekomstige beroep</li>
+                <li>De bpv is een soort soepele overstap van school naar bedrijfsleven.</li>
+                <li>Je moet een voldoende halen voor de BPV om in aanmerking te komen voor een diploma.</li>
+            </ul>
         </div>
-        <div id="navbar-hamburger">
-            <i id="menu-opener" class="fas fa-bars fa-1x"></i>
+        <div class="col">
+            <h3>Voor bedrijven</h3>
+            <p>Om een stagiaire in uw bedrijf te laten werken moet u aan een paar voorwaarden voldoen. Stagebedrijven
+                worden geaccrediteerd door de Samenwerkingsorganisatie Beroepsonderwijs Bedrijfsleven (SBB).
+                SBB waarborgt dat bedrijven die een stagiair in dienst nemen zorgen voor begeleiding en een omgeving
+                bieden
+                waar een stagiair aan de slag kan met de competenties die hij nodig heeft in zijn toekomstige beroep.
+                Met het aannemen van een stagiaire in uw bedrijf helpt u niet alleen een student zijn kennis en ervaring
+                te
+                verbreden, maar een stagiaire heeft ook voordelen.</p>
+            <p style="text-align:right"><a href="#bedrijven">Lees hier meer</a></p>
+
+
         </div>
-    </template>
-    <!-- end templates -->
-
-    <header>
-        <nav-bar-test>
-            <span slot="brand">jatsekidee</span>
-            <li slot="menu-item">blaberdie</li>
-            <li slot="menu-item">blaberdie2</li>
-            <li slot="menu-item">blaberdie3</li>
-        </nav-bar-test>
-        <nav>
-            <nav-brand></nav-brand>
-            <nav-item slot="link">item1</nav-item>
-            <nav-item slot="link">item1</nav-item>
-            <nav-item slot="link">item1</nav-item>
-            <nav-item slot="link">item1</nav-item>
-        </nav>
-    </header>
-
+    </article>
+    <section>
+        <card-element id="test">
+            <p slot="description">Waar vind je een stageplek</p>
+            <p slot="body">Een stageplek kun je op verschillende manieren vinden. Je kunt op internet op zoek gaan naar
+                vacatures, maar je kunt ook in je netwerk vragen of iemand je een stageplek kan aanbieden. Met je
+                netwerk bedoelen we familie en vrienden die ook een beroep hebben in de ICT.</p>
+        </card-element>
+        <card-element id="blaberdie">
+            <p slot="description">Solliciteren</p>
+            <p slot="body">Hoe laat je bedrijven weten dat je op zoek bent naar een stageplek. Ook dat kan op
+                verschillende manieren. Je kunt gebruik maken van communities op internet. Denk bijvoorbeeld aan
+                linked-in. Daarnaast moet je een CV maken en je sollicitatie opsturen naar bedrijven waar je graag aan
+                de slag zou willen</p>
+        </card-element>
+        <card-element id="hoppeldepee">
+            <p slot="description">Hatsekidee hoppeldepee</p>
+            <p slot="body">Donec ut mattis diam, vel mollis erat. Cras elit metus, laoreet at ultricies ac, finibus
+                suscipit
+                ante.</p>
+        </card-element>
+    </section>
+</main>
 </body>
-
 </html>
