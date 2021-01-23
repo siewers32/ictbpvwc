@@ -5,7 +5,7 @@ const browserSync = require('browser-sync').create();
 const imagemin = require("gulp-imagemin");
 
 const origin = 'src';
-const destination = 'build';
+const destination = 'public_html';
 
 function html(cb) {
     src(`${origin}/**/*.html`).pipe(dest(destination));
