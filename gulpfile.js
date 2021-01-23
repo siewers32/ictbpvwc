@@ -17,6 +17,11 @@ function fonts(cb) {
     cb();
 }
 
+function downloads(cb) {
+    src(`${origin}/downloads/**/*.pdf`).pipe(dest(`${destination}/downloads`));
+    cb();
+}
+
 function css(cb) {
     src(`${origin}/css/**/*.css`).pipe(concat('style.css')).pipe(dest(`${destination}/css`));
     cb();
@@ -56,4 +61,4 @@ function server(cb) {
 }
 
 
-exports.default = series(clean, parallel(fonts, html, css, js, img), server, watcher);
+exports.default = series(clean, parallel(fonts, downloads, html, css, js, img), server, watcher);

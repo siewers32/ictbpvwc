@@ -29,7 +29,7 @@ class NavLink extends HTMLElement {
 
     addLink(evt, elem) {
         console.log(elem.firstChild.href);
-        evt.preventDefault();
+        //evt.preventDefault();
     }
 
     connectedCallback(elem) {
