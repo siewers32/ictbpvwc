@@ -65,6 +65,12 @@ h3 {
     font-size: calc(1em * var(--type-scale) * 1.8);
 }
 
+a {
+    color:var(--c3);
+    text-decoration: none;
+    font-weight:500;
+}
+
 .code {
     font-family: 'JetBrainsMono';
     font-size: 1em;
@@ -131,8 +137,9 @@ article {
 
 section {
     display: grid;
-    grid-template-columns:repeat( auto-fit, minmax(250px, 1fr) );
+    grid-template-columns:repeat( auto-fit, minmax(300px, 1fr) );
     gap: 1rem;
+    margin-bottom: 4rem;
 }
 
 card-element {
@@ -145,6 +152,21 @@ card-element > p {
     color: #1f1f1f;
 }
 
+.videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+}
+.videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 footer {
     grid-area: footer;
 }
+
+

@@ -15,19 +15,18 @@ CardElementTemplate.innerHTML = `
             .description {
                 font-weight:500;
             }
-            
             a {
                 color:var(--c3);
                 text-decoration: none;
                 font-weight:500;
-          }
+            }
         </style>
         
         <p class="description"><slot name="description">De description</slot></p>
         <p><slot name="body">Donec ut mattis diam, vel mollis erat. Cras elit metus, laoreet at ultricies ac, finibus
             suscipit
             ante.</slot></p>
-         <div id="link"><a href="#">More</a></div>
+         <div id="link"><a href="#">Lees meer...</a></div>
        `;
 
 class CardElement extends HTMLElement {
@@ -49,8 +48,11 @@ class CardElement extends HTMLElement {
     }
 
     addLink(evt, elem) {
-        console.log(elem);
+        var url = "#" + elem.dataset.href;
+        console.log(url);
+        window.location.assign(url);
         evt.preventDefault();
+
     }
 
     connectedCallback() {
