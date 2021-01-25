@@ -38,6 +38,7 @@ body {
     padding: 0px;
     color: var(--c5);
     line-height: calc(var(--type-scale) * 1.8);
+    background-color:#fff;
 }
 
 h1,
