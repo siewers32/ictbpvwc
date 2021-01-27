@@ -19,6 +19,7 @@ function fonts(cb) {
 
 function downloads(cb) {
     src(`${origin}/downloads/**/*.pdf`).pipe(dest(`${destination}/downloads`));
+    src(`${origin}/downloads/**/*.docx`).pipe(dest(`${destination}/downloads`));
     cb();
 }
 
