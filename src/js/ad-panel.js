@@ -2,11 +2,11 @@ let AdPanelTemplate = document.createElement('template');
 AdPanelTemplate.innerHTML = `  
        
             <style>
-            #container {
+            div {
                 display:flex;
                 justify-content: flex-start;
                 gap:2rem;         
-                flex-wrap: wrap
+                flex-wrap: wrap;
             }
 
             
