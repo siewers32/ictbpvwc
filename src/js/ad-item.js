@@ -25,8 +25,8 @@ AdItemTemplate.innerHTML = `
        
             <div id="item">
                 <p id="title"><slot name="title">item-test</slot></p>
-                <p id="description"><slot name="description">item-test</slot>
-                <p id="naw"><slot name="naw">item-test</slot>
+                <p id="description"><slot name="description">item-test</slot></p>
+                <p id="naw"><slot name="naw">item-test</slot></p>
             </div>
 `;
 
