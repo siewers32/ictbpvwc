@@ -4,7 +4,7 @@ const concat = require('gulp-concat');
 const browserSync = require('browser-sync').create();
 const imagemin = require("gulp-imagemin");
 const origin = 'src';
-const destination = 'public_html';
+const destination = 'private_html';
 
 function html(cb) {
     src(`${origin}/**/*.html`).pipe(dest(destination));
